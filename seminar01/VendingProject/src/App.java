@@ -1,21 +1,26 @@
+import Products.BottleOfWater;
 import Products.Product;
 import VendingMachines.VendingMachine;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Product item1 = new Product("cola",100.00);
-        item1.setPrice(99.00);
-        
 
-        VendingMachine itemMach1 = new VendingMachine(300);
-        itemMach1.addProduct(item1);
-        itemMach1.addProduct(new Product("капуччино", 120.00));
-        itemMach1.addProduct(new Product("Шоколад", 90.00));
-        itemMach1.addProduct(new Product("Американо", 80.00));
+        Product item1 = new Product("Cola",88.0);
+        item1.setPrice(98.0);
 
-        for(Product prod: itemMach1.getProdAll())
+        VendingMachine itemMachin = new VendingMachine(300);
+        itemMachin.addProduct(item1);
+        itemMachin.addProduct(new Product("Чипсы", 60.0));
+        itemMachin.addProduct(new Product("Масло", 50.0));
+        itemMachin.addProduct(new Product("Хлеб", 40.0));
+        itemMachin.addProduct(new Product("Снек", 20.0));
+        itemMachin.addProduct(new BottleOfWater("Cola", 88.0, 500 ));
+        itemMachin.addProduct(new BottleOfWater("Water", 188.0, 1500 ));
+
+        for(Product prod: itemMachin.getProdAll())
         {
-            System.out.println(prod);
+            System.out.println(prod.toString());
         }
+       
     }
 }

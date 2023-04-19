@@ -6,36 +6,42 @@ import java.util.List;
 import Products.Product;
 
 public class VendingMachine {
+    
     private int volume;
-    private List<Product> products;
-    private List<String> workLog;
+    private List<Product> products;// = new ArrayList<Product>();
+    private List<String> workLog;// = new ArrayList<String>();
 
-    public VendingMachine(int volum){
-        this.volume = volum;
+    public VendingMachine(int volume){
+        this.volume = volume;
         products = new ArrayList<Product>();
         workLog = new ArrayList<String>();
+    }
 
-    }
-    
-    public Product getproductByName(String name){
-        for (Product product : products) {
-            if (product.getName().contains(name)) {
-                return product;
-            }
-        }
-        return null;
-    }
-    
-    public void addProduct(Product prod){
+    public void addProduct(Product prod)
+    {
         products.add(prod);
     }
 
-    public void addSales(String sale) {
-        workLog.add(sale);
+    public void addSales(String line)
+    {
+        workLog.add(line);
+    }
+
+    public Product getProdByName(String name)
+    {
+        for(Product prod: products)
+        {
+            if(prod.getName().contains(name))
+            {
+                return prod;
+            }
+        }
+        return null;
     }
 
     public List<Product> getProdAll()
     {
         return products;
     }
+
 }
