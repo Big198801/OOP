@@ -1,6 +1,7 @@
 import Products.BottleOfWater;
 import Products.Product;
 import VendingMachines.VendingMachine;
+import Products.HotDrink;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -16,6 +17,10 @@ public class App {
         itemMachin.addProduct(new Product("Снек", 20.0));
         itemMachin.addProduct(new BottleOfWater("Cola", 88.0, 500 ));
         itemMachin.addProduct(new BottleOfWater("Water", 188.0, 1500 ));
+
+        itemMachin.addProduct(new HotDrink("Black Tex", 40.0, 80));
+        itemMachin.addProduct(new HotDrink("Green Tea", 45, 75));
+
 
         for(Product prod: itemMachin.getProdAll())
         {
