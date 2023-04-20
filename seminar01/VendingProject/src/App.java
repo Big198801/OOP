@@ -17,15 +17,22 @@ public class App {
         itemMachin.addProduct(new Product("Снек", 20.0));
         itemMachin.addProduct(new BottleOfWater("Cola", 88.0, 500 ));
         itemMachin.addProduct(new BottleOfWater("Water", 188.0, 1500 ));
-
-        itemMachin.addProduct(new HotDrink("Black Tex", 40.0, 80));
-        itemMachin.addProduct(new HotDrink("Green Tea", 45, 75));
+        // напитки класса HotDrink
+        HotDrink hotItem1 = new HotDrink("Black Tea", 40.0, 80, 300);
+        HotDrink HotItem2 = new HotDrink("Green Tea", 45, 75, 300);
+        itemMachin.addProduct(new HotDrink("Americano", 60.0, 80, 200));
+        itemMachin.addProduct(hotItem1);
+        itemMachin.addProduct(HotItem2);
 
 
         for(Product prod: itemMachin.getProdAll())
         {
             System.out.println(prod.toString());
         }
+
+        System.out.println("\n");
+        //воспроизведение заложенной в программу логики 
+        System.out.println(itemMachin.getProdByName("Black Tea"));
        
     }
 }

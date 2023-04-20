@@ -36,9 +36,9 @@ public class BottleOfWater extends Product {
     public String toString()
     {
         return  "Product{" +
-        "name='" + super.getName() + '\'' +
-        ", cost=" + super.getPrice() +
-        ", volume=" + volume +
+        "name = '" + super.getName() + '\'' +
+        ", cost = " + super.getPrice() +
+        ", volume = " + volume +
         '}';
     }
     

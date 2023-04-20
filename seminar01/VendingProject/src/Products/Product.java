@@ -24,18 +24,17 @@ public class Product {
      * конструктор продукта 1 параметр
      * @param name наименование продукта
      */
-    public Product(String name)
-    {
+    public Product(String name) {
         this.name = name;
     }
 
     /** получаем наименование продукта */
-    public String getName(){ 
+    public String getName() { 
         return name; 
     } 
 
     /** получаем цену продукта */
-    public Double getPrice(){ 
+    public Double getPrice() { 
         return price; 
     }
 
@@ -43,11 +42,9 @@ public class Product {
      * устанавливаем цену продукта
      * @param value новая цена продукта
      */
-    public void setPrice(Double value)
-    {
+    public void setPrice(Double value) {
         if (value <= 0) {
-            throw new IllegalStateException(String.format("Цена указана некорректно!", value));
-            //return;
+            throw new IllegalStateException(String.format("Цена указана некорректно!", value));            
         }
         this.price = value;
     }
@@ -56,11 +53,10 @@ public class Product {
      * переопределение вывода продукта
      */
     @Override
-    public String toString()
-    {
+    public String toString() {
         return  "Product{" +
-        "name='" + name + '\'' +
-        ", cost=" + price +
+        "name = '" + name + '\'' +
+        ", cost = " + price +
         '}';
     }
 }

@@ -11,22 +11,50 @@ public class VendingMachine {
     private List<Product> products;// = new ArrayList<Product>();
     private List<String> workLog;// = new ArrayList<String>();
 
-    public VendingMachine(int volume){
+    public VendingMachine(int volume) {
         this.volume = volume;
         products = new ArrayList<Product>();
         workLog = new ArrayList<String>();
     }
 
-    public void addProduct(Product prod)
-    {
+    /**
+     * метод, позволяющий получить информацию о вместимости устройства
+     * @return max количество подуктов/напитков 
+     */
+    public int getVolume(){
+        return volume;
+    }
+
+    /**
+     * метод, позволяющий задать вместимость аппарата
+     * @param volume введите max вместимость аппарата
+     */
+    public void setVolume(int volume){
+        this.volume = volume;
+    }
+
+    /**
+     * метод, позволяющий добватить новый продуктовую единицу в аппарат
+     * @param prod продукт/напиток
+     */
+    public void addProduct(Product prod) {
         products.add(prod);
     }
 
+    /**
+     * метод для ведения журнала продаж
+     * @param line проданный товар
+     */
     public void addSales(String line)
     {
         workLog.add(line);
     }
 
+    /**
+     * метод для поиска продукта в каталоге
+     * @param name запрос по наименованию
+     * @return  при наличии, возвращает искомый продукт, ИНАЧЕ - NULL
+     */
     public Product getProdByName(String name)
     {
         for(Product prod: products)
@@ -38,7 +66,10 @@ public class VendingMachine {
         }
         return null;
     }
-
+    /**
+     * метод, позволяющий просмотреть весь каталог товаров в аппарате
+     * @return имеющиеся товары в аппарате
+     */
     public List<Product> getProdAll()
     {
         return products;
