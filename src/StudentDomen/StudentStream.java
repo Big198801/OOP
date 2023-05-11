@@ -2,7 +2,9 @@ package StudentDomen;
 
 import java.util.Iterator;
 import java.util.List;
-
+/**
+ * 1 задание. создан класс, описывающий поток клиентов, состоящий из групп. Наследует интерфейс Iterable
+ */
 public class StudentStream implements Iterable<StudentGroup>{
     public List<StudentGroup> stream;
 
@@ -13,9 +15,7 @@ public class StudentStream implements Iterable<StudentGroup>{
     public List<StudentGroup> getGroup(){
         return stream;
     }
-    //public void ad(List <StudentGroup> groups){
-    //    stream.add();
-    //}
+    
     @Override
     public Iterator<StudentGroup> iterator() {
         return  new Iterator<StudentGroup>() {

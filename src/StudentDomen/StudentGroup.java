@@ -7,8 +7,6 @@ public class StudentGroup  implements Iterable<Student>, Comparable<StudentGroup
     private List<Student> student;
     private long groupId;
     
-    //добавь геттер и сеттер
-
     public StudentGroup(List<Student> student, long groupId) {
         this.student = student;
         this.groupId = groupId;
@@ -26,10 +24,8 @@ public class StudentGroup  implements Iterable<Student>, Comparable<StudentGroup
     public void setStudents(List<Student> student) {
         this.student = student;
     }
-    public List<Student> getStudents(){
-        return student;
-    }
-
+    
+    //2 задание. итератор для вывода на консоль
     @Override
     public Iterator<Student> iterator() {
         return  new Iterator<Student>() {
@@ -51,6 +47,7 @@ public class StudentGroup  implements Iterable<Student>, Comparable<StudentGroup
         };
     }
 
+    // 3 задание. comparator. сравнение по количеству студентов
     @Override
     public int compareTo(StudentGroup o) {
         if (this.student.size() == o.getStudent().size()) {

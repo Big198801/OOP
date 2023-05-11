@@ -10,9 +10,9 @@ import StudentDomen.User;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        System.out.println("Третье ДЗ готово)\n");
 
-   // User u1 = new User("sergey", "Ivanov" ,25);
+    User u1 = new User("sergey", "Ivanov" ,25);
     Student s1 = new Student("Oleg", "Ivashin", 25, (long)101);
     Student s2 = new Student("Aleksey", "Tolstoy", 24, (long)111);
     Student s3 = new Student("Alex", "Tolstov", 22, (long)112);
@@ -24,7 +24,7 @@ public class App {
     Student s9 = new Student("ivanka", "Pirogov", 43, (long)113323);
     Student s10 = new Student("Ignat", "Pegov", 27, (long)114565);
     Student s11 = new Student("Ig", "Popov", 29, (long)1145125);
-    //Teacher t1 = new Teacher("Jack", "Nickolaev", 45, "phisics");
+    Teacher t1 = new Teacher("Jack", "Nickolaev", 45, "phisics");
 
     List<Student>listStud = new ArrayList<>();
     listStud.add(s1);
@@ -34,6 +34,11 @@ public class App {
     listStud.add(s5);
     listStud.add(s6);
 
+    StudentGroup group_1 = new StudentGroup(listStud, 1000);
+    System.out.printf("\nНомер группы: %s\nсписок студентов:\n",group_1.getId());
+    for (Student students : group_1) {
+        System.out.println(students);
+    }
     
     List<Student>listStud_2 = new ArrayList<>();
     listStud_2.add(s7);
@@ -41,23 +46,30 @@ public class App {
     listStud_2.add(s9);
     listStud_2.add(s10);
     listStud_2.add(s11);
-    StudentGroup group_1 = new StudentGroup(listStud, 1000);
+
     StudentGroup group_2 = new StudentGroup(listStud_2, 1001);
+    System.out.printf("\nНомер группы: %s\nсписок студентов:\n",group_2.getId());
+    for (Student students : group_2) {
+        System.out.println(students);
+    }
+    
     List<StudentGroup> list_potok1 = new ArrayList<StudentGroup>();
     list_potok1.add(group_1);
     list_potok1.add(group_2);
     StudentStream potok1 = new StudentStream(list_potok1);
 
+    //сортировка по кол-ву студентов
     Collections.sort(potok1.getGroup());
     
-    System.out.println("___после сотрировки____");
+    System.out.println("\n\n___группа с меньшим количеством студентов выводится в первую очередь_____");
     for (StudentGroup studentGroup : potok1) {
-        System.out.println("\nНомер группы: " + studentGroup.getId()+ "\nКоличество студентов: " + studentGroup.getStudents().size() );
-        
+        System.out.printf("Номер группы: %d\nКоличество студентов: %d\n", studentGroup.getId() ,studentGroup.getStudent().size() );       
         for (Student stud : studentGroup) {
             System.out.println(stud);
         }
     }
+    }
+}
 
     
     
@@ -65,5 +77,3 @@ public class App {
     
     
     
-    }
-}
