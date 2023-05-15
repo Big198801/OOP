@@ -10,9 +10,7 @@ public class User {
         this.secondName = secondName;
         this.age = age;
     }
-    public User(){
-        this("null", "null", 0);
-    }
+    
     public void setFirstName(String firstName){
         this.firstName = firstName;
     }
@@ -39,10 +37,10 @@ public class User {
 
     @Override
     public String toString(){
-        return "User {" 
+        return " User {" 
             + "firstName = " + getFirstName()
             + ", secondName = " + getSecondName()
-            + ", age = " + getAge()+ '}';
+            + ", age = " + getAge()+ "}\n";
     }
 
 }

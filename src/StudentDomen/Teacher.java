@@ -1,20 +1,25 @@
 package StudentDomen;
 
-public class Teacher extends User {
-    private String profession;
-    public Teacher(String firstName, String secondName, int age, String profession) {
-        super(firstName, secondName, age);
-        this.profession = profession;
+
+
+public class Teacher extends User implements Comparable<Teacher>{
+    private String academicDegree;
+
+    public Teacher(String firstName, String secondName, int age, String academicDegree) {
+        super(firstName, secondName, age);    
+        this.academicDegree = academicDegree;
     }
 
-    public void setProfession(String profession){
-        this.profession= profession;
+
+    public String getTeacherId() {
+        return academicDegree;
     }
 
-    public String getProfesion(){
-        return this.profession;
+    public void setTeacherId(String academicDegree) {
+        this.academicDegree = academicDegree;
     }
 
+    
     @Override
     public int getAge() {
         return super.getAge();
@@ -47,11 +52,22 @@ public class Teacher extends User {
 
     @Override
     public String toString() {
-        return "Teacher {" 
+        return " Teacher {" 
         + "firstName = " + super.getFirstName()
         + ", secondName = " + super.getSecondName()
         + ", age = " + super.getAge()+ 
-        ", profession = " + this.profession + '}';
+        "}\n";
+    }
+
+    @Override
+    public int compareTo(Teacher o) {
+        if (this.getAge() == o.getAge()) {
+            return 0;
+        }
+        if (this.getAge() > o.getAge()) {
+            return 1;
+        }
+        return -1;
     }
     
 }
