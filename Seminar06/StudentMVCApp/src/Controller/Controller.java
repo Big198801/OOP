@@ -22,7 +22,10 @@ public class Controller extends ViewEng {
         this.studens = new ArrayList<Student>();
 
     }
-
+    /**
+     * проверка на наличие данных в списке
+     * @return
+     */
     public boolean testData() {
         if (studens.size() > 0) {
             return true;
@@ -30,11 +33,11 @@ public class Controller extends ViewEng {
             return false;
         }
     }
-
+    /** метод получения всех студентов, получаем их из блока model */
     public void getAllStudent() {
         studens = model.getAllStudent();
     }
-
+    /** метод для вывода все студентов */
     public void updateView() {
         // MVP
         getAllStudent();
@@ -47,7 +50,7 @@ public class Controller extends ViewEng {
         // MVC
         // view.printAllStudens(model.getAllStuden());
     }
-
+    // "основной метод для запуска взаимодействия с пользователем"
     public void run() {
         Command com = Command.NONE;
         boolean getNewIteration = true;
