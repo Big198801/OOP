@@ -7,34 +7,44 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import Controller.igetModel;
-
+/** класс для записи/чтения студентов из/в файл */
 public class FileRepo {
     private String fileName;
     private List<Student> students;
 
-    public FileRepo(String fileName){
+    /**
+     * конструктор класса
+     * 
+     * @param fileName имя файла
+     */
+    public FileRepo(String fileName) {
         this.fileName = fileName;
         this.students = new ArrayList<>();
-        try (FileWriter fw = new FileWriter(fileName, true)){
+        try (FileWriter fw = new FileWriter(fileName, true)) {
             fw.flush();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public void addStudent(Student student){
+    /**
+     * метод добавления студента в список
+     * 
+     * @param student экземпляр класса Student
+     */
+    public void addStudent(Student student) {
         this.students.add(student);
     }
 
-    public void readAllStudentsFromFile(){
+    /** метод для вывода списка клиентов с файла */
+    public void readAllStudentsFromFile() {
         try {
             File file = new File(fileName);
             FileReader fr = new FileReader(fileName);
             BufferedReader reader = new BufferedReader(fr);
             String line = reader.readLine();
-            while(line!=null){
-                String[]param = line.split(" ");
+            while (line != null) {
+                String[] param = line.split(" ");
                 Student pers = new Student(param[0], param[1], Integer.parseInt(param[2]), Long.parseLong(param[3]));
                 students.add(pers);
                 line = reader.readLine();
@@ -44,10 +54,12 @@ public class FileRepo {
         }
     }
 
-    public void saveAllStudentstoFile(){
-        try (FileWriter fw = new FileWriter(fileName, false)){
-            for(Student pers : students){
-                fw.write(pers.getFirstName() + " " + pers.getSecondName()+" " + pers.getAge() + " " + pers.getStudentId());
+    /** Метод для записи списка студентов в файл */
+    public void saveAllStudentstoFile() {
+        try (FileWriter fw = new FileWriter(fileName, false)) {
+            for (Student pers : students) {
+                fw.write(pers.getFirstName() + " " + pers.getSecondName() + " " + pers.getAge() + " "
+                        + pers.getStudentId());
                 fw.append("\n");
             }
             fw.flush();
@@ -56,12 +68,14 @@ public class FileRepo {
         }
     }
 
-    
+    /**
+     * получение списка студентов из файла
+     * 
+     * @return возвращает список студентов
+     */
     public List<Student> getAllStudent() {
         readAllStudentsFromFile();
         return students;
     }
-
-    
 
 }

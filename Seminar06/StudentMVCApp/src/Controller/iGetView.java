@@ -6,7 +6,6 @@ import Model.Student;
 
 public interface iGetView {
     void printAllStudens(List<Student> students);
+
     String prompt(String message);
-    void deleteSuccessful();
-    
 }

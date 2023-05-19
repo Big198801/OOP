@@ -1,10 +1,15 @@
 package Model;
-
+/**Базовый класс, использыемый для наследования */
 public class User {
     private String firstName;
     private String secondName;
     private int age;
-
+    /**
+     * Конструктор базового класса
+     * @param firstName Имя
+     * @param secondName Фамиля
+     * @param age возраст
+     */
     public User(String firstName, String secondName, int age){
         this.firstName = firstName;
         this.secondName = secondName;
@@ -34,7 +39,7 @@ public class User {
     public int getAge(){
         return this.age;
     }
-
+    /** Переопределение метода toString для верного вывода на консоль */
     @Override
     public String toString(){
         return " User {" 
