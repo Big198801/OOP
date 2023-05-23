@@ -2,10 +2,19 @@ package ex1;
 
 public class CalculateNetSalary {
    
-    int baseSalary;
+    private int baseSalary;
     
-    public int calculateNetSalary(int baseSalary) {
-        int tax = (int) (baseSalary * 0.25);// calculate in otherway
-        return baseSalary - tax;
+    /** 
+     * @return возврат базовой ЗП
+     */
+    public int getBaseSalary(){
+        return this.baseSalary;
+    }
+
+    /**
+     * @return возвращает результат netSalary
+     */
+    public int calculateNetSalary() {
+      return  (int)(getBaseSalary() - (getBaseSalary() * 0.25));
     }
 }
