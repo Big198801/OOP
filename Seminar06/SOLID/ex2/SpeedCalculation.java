@@ -2,6 +2,7 @@ package ex2;
 
 public class SpeedCalculation {
     Vehicle vehicle;
+
     public double calculateAllowedSpeed(Vehicle vehicle) {
         if (vehicle.getType().equalsIgnoreCase("Car")) {
             return vehicle.getMaxSpeed() * 0.8;

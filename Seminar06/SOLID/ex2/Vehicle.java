@@ -18,7 +18,7 @@ public class Vehicle {
         return maxSpeed;
     }
 
-    public double calculateAllowedSpeed(Vehicle vehicle) {
+   /*  public double calculateAllowedSpeed(Vehicle vehicle) {
         if (vehicle.getType().equalsIgnoreCase("Car")) {
             return vehicle.getMaxSpeed() * 0.8;
         } else if (vehicle.getType().equalsIgnoreCase("Bus")) {
@@ -26,5 +26,5 @@ public class Vehicle {
         }
         return 0.0;
 
-    }
+    }*/
 }
